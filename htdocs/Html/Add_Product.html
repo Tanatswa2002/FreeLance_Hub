@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="../CSS/Add_Product.css">
+</head>
+<body>
+    <form action="../PHP/Add_Product.php" method="post" enctype="multipart/form-data">
+        <label for="Name">Name:</label>
+        <input type="text" id="Name" name="Name" required><br><br>
+
+        <label for="Description">Description:</label>
+        <input type="text" id="Description" name="Description" required><br><br>
+
+        <label for="Price">Price:</label>
+        <input type="number" id="Price" name="Price" step="0.01" required><br><br>
+
+        <label for="product_type">Product Type:</label>
+        <select name="product_type" id="product_type" onchange="toggleImageUpload()">
+            <option value="good">Good</option>
+            <option value="service">Service</option>
+        </select><br><br>
+
+        <div id="image_upload_section">
+            <label>Upload Image:</label>
+            <input type="file" name="image">
+        </div><br>
+
+        <button type="submit">Add Product</button>
+    </form>
+
+    <script>
+    function toggleImageUpload() {
+        const type = document.getElementById("product_type").value;
+        document.getElementById("image_upload_section").style.display = (type === "good") ? "block" : "none";
+    }
+    toggleImageUpload();
+    </script>
+</body>
+</html>

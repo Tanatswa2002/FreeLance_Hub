@@ -1,0 +1,162 @@
+/* Remove default body margin */
+body {
+  background-color: #f0f0f0; /* your base color */
+  background-image: url('images/noise.png'); /* subtle grainy noise image */
+  background-repeat: repeat;
+  background-size: auto;
+  margin:0;
+  padding:0;
+}
+
+ 
+/* Hero container full width and no space */
+.hero-image-container {
+  position: relative;
+  width: 100vw;    /* full viewport width */
+  height: 45vh;
+  overflow: hidden;
+  background-color: black; /* fallback */
+  margin: 0;
+  padding: 0;
+  text-align:left;
+}
+
+.hero-image-container button{
+  border-radius:30px;
+  border:1px solid black;
+  color:black;
+  background-color:#f7d46c;
+  padding:0.8rem;
+  width:105px;
+}
+
+/* Image fills container fully */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Image fills width, keeps aspect ratio */
+.hero-img {
+  width: 100%;
+  height: 45vh;
+  max-height: 600px; /* or any px value you want */
+  object-fit: cover; /* crops if needed to fill height */
+  object-position: center top; 
+  display: block;
+}
+
+
+/* Dark overlay for better text contrast */
+.hero-image-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Top Navigation */
+.top-nav {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 5;
+  display: flex;
+  gap: 15px;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+}
+
+.top-nav a,
+.top-nav span {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.top-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Text Container */
+.hero-text-container {
+  position: absolute;
+  bottom: 20%;
+  left: 50px;
+  color: #fff;
+  max-width: 500px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 10;
+}
+
+/* Paragraph styling inside hero text */
+.hero-image-container p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 30px;
+}
+
+/* Slide-in animation from left */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideInFromLeft 1s ease forwards;
+}
+
+#testimonials p {
+  font-weight: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+#testimonials ul {
+  display: flex;
+  flex-wrap: nowrap;      /* prevent wrapping to next line */
+  gap: 20px;              /* space between testimonials */
+  overflow-x: auto;       /* allow horizontal scroll if too many */
+  padding: 0;
+  margin: 0 auto;
+  max-width: 100%;
+  list-style: none;
+}
+
+#testimonials li {
+  flex: 0 0 auto;         /* fix width per item */
+  width: 300px;           /* or any fixed width you want */
+  padding: 25px 30px;
+  border-radius: 30px;
+  text-align: center;
+  border: 1px solid palegoldenrod;
+}
+
+#testimonials li.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

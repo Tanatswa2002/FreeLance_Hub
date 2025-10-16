@@ -1,0 +1,196 @@
+/* Reset and basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  padding: 40px;
+  color: #333;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Container for dashboard */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  color: #0b3e82;
+}
+
+/* Section styling */
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+/* Section headers */
+section h2 {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  color: #0b3e82;
+  margin-bottom: 15px;
+  /* Removed underline */
+  /* border-bottom: 2px solid #0b3e82; */
+  padding-bottom: 5px;
+  text-decoration: none;
+}
+
+/* Lists */
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+li {
+  padding: 5px 0;
+}
+
+
+
+/* Forms */
+form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+input[type="text"]
+{
+   width:500px; 
+   padding:0.8rem;
+   margin-bottom: 12px;
+   border-radius: 5px;
+   border: 1.5px solid #ccc;
+}
+
+input[type="text"]:hover{
+  border-color: #0b3e82;
+  outline: none;
+
+}
+
+input[type="text"]::placeholder {
+  font-style: italic;
+}
+
+form input[type="text"]:focus,
+form textarea:focus {
+  border-color: #0b3e82;
+  outline: none;
+}
+
+input[name = "school"]{
+    width:500px;
+    padding:0.8rem;
+}
+
+input[name = "degree"]{
+    width:500px;
+    padding:0.8rem;
+}
+
+input[name = "field_of_study"]{
+    width:500px;
+    padding:0.8rem;
+    margin-bottom: 12px;
+}
+/* Date inputs container for side-by-side layout */
+.date-inputs {
+  display: flex;
+  gap: 30px; /* space between */
+  margin-bottom: 12px;
+}
+
+.text-inputs{
+   display: flex;
+   gap: 30px;
+   margin-bottom: 12px;
+}
+
+
+
+/* Date inputs styles */
+form input[type="date"] {
+  flex: 1; /* equal width */
+  padding: 10px 12px;
+  border: 1.5px solid #fff;
+  border-radius: 5px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  color:#fff;
+
+}
+
+form input[type="date"]:hover{
+  cursor: pointer;
+  border-color: #FBE7A1;;
+  outline: none;
+}
+
+form input[type="date"]:focus {
+  border-color:  #FBE7A1;;
+  outline: none;
+}
+
+/* Buttons */
+form button,
+form input[type="submit"] {
+  background-color: #FBE7A1;;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+  background-color: #FBE7A1;;
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  section {
+    padding: 15px;
+  }
+  
+  /* Stack date inputs on small screens */
+  .date-inputs {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

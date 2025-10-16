@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create Account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .register-wrapper {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      overflow: visible;
+    }
+
+    .register-left {
+      flex: 1;
+      background-image: url('../images/Login_1.jpg'); /* Change to your image path */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .register-right {
+      flex: 1;
+      background-image: url('../images/Login_1.jpg'); /* Same image for blur */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .Register_group_roles {
+  margin-top: 10px;
+}
+
+
+    .form-glass {
+      width: 90%;
+      max-width: 700px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      margin-right:0px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #000;
+    }
+
+    h2 {
+        font-size:40px;
+        margin-left:10px;
+      text-align: left;
+    }
+
+    .profile-image-upload {
+      margin: 15px 0 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #imgPreview {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #ddd;
+      object-fit: cover;
+      border: 3px solid #0b3e82;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+
+    #imgPreview:hover {
+      box-shadow: 0 0 10px #0b3e82;
+    }
+
+    #profile_image {
+      display: none;
+    }
+
+    label[for="profile_image"] {
+      margin-top: 12px;
+      background-color: #0b3e82;
+      width: 150px;
+      text-align:center;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+
+    label[for="profile_image"]:hover {
+      background-color: #164baf;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: inherit;
+      width: 100%;
+    }
+
+    .Register_group_names{
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .passwords {
+      display: flex;
+      gap: 10px;
+      flex-direction: row;
+    }
+
+    .Register_group_users{
+      display: flex;
+      gap: 10px;
+      flex-direction: row;
+    }
+
+    .Register_button {
+      text-align: center;
+    }
+
+    #Register_button {
+      background-color: #0b3e82;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #Register_button:hover {
+      background-color: #164baf;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #0b3e82;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+    <h2>Create Account:</h2>
+  <div class="register-wrapper">
+    <div class="register-left"></div>
+    <div class="register-right">
+      <div class="form-glass">
+        <form action="../PHP/Registration.php" method="POST" id="registerForm" enctype="multipart/form-data" novalidate>     
+        <div class="profile-image-upload">
+          <img id="imgPreview" src="../images/upload_image.jpg" alt="Profile preview" title="Click to upload profile image" />
+          
+            <label for="profile_image">Upload</label>
+                <input type="file" id="profile_image" name="profile_image" accept="image/*" />
+            </label>
+
+                  </div>
+
+          <div class="Register_group_names">
+            <input type="text" id="Fname" name="Fname" placeholder="First Name" required />
+            <input type="text" id="Lname" name="Lname" placeholder="Last Name" required />
+          </div>
+
+          <div class="Register_group_users">
+            <input type="text" id="username" name="username" placeholder="Enter Username" required />
+            <input type="email" id="email" name="email" placeholder="Email" required />
+          </div>
+
+          <div class="Register_group">
+            <input type="text" id="phone" name="phone" placeholder="Phone number" required />
+          </div>
+
+          <div class="Register_group passwords">
+            <input type="password" id="password" name="password" placeholder="Enter Password" required />
+            <input type="password" id="C_password" name="C_password" placeholder="Confirm Password" required />
+          </div>
+
+          <div class="Register_group_roles">
+            <label for="role">Register as:</label>
+            <select name="role" id="role">
+              <option value="seller">Seller</option>
+              <option value="buyer">Buyer</option>
+            </select>
+          </div>
+
+          <div class="Register_button">
+            <button type="submit" id="Register_button">Register</button>
+          </div>
+
+          <p>Already a member? <a href="../PHP/Login.php">Log in</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("registerForm");
+      const profileImageInput = document.getElementById("profile_image");
+      const imgPreview = document.getElementById("imgPreview");
+
+      imgPreview.addEventListener('click', () => profileImageInput.click());
+
+      form.addEventListener("submit", function (e) {
+        const fname = document.getElementById("Fname").value.trim();
+        const lname = document.getElementById("Lname").value.trim();
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const password = document.getElementById("password").value;
+        const confirm = document.getElementById("C_password").value;
+        const file = profileImageInput.files[0];
+
+        let errors = [];
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          errors.push("Invalid email format.");
+        }
+
+        if (!/^\d{10,15}$/.test(phone)) {
+          errors.push("Phone number must be 10 to 15 digits.");
+        }
+
+        const strongPass = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/;
+        if (!strongPass.test(password)) {
+          errors.push("Password must include uppercase, lowercase, number, symbol, and be at least 8 characters.");
+        }
+
+        if (password !== confirm) {
+          errors.push("Passwords do not match.");
+        }
+
+        if (file) {
+          const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+          if (!validTypes.includes(file.type)) {
+            errors.push("Profile image must be JPEG, PNG, or GIF.");
+          }
+          const maxSize = 2 * 1024 * 1024;
+          if (file.size > maxSize) {
+            errors.push("Profile image must be less than 2MB.");
+          }
+        }
+
+        if (errors.length > 0) {
+          e.preventDefault();
+          alert(errors.join("\n"));
+        }
+      });
+
+      profileImageInput.addEventListener('change', function () {
+        const [file] = this.files;
+        if (file) {
+          imgPreview.src = URL.createObjectURL(file);
+        } else {
+          imgPreview.src = "https://via.placeholder.com/120?text=Upload";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

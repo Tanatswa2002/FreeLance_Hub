@@ -1,0 +1,154 @@
+/* Reset and basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #fffaf0; /* light butter yellow background */
+  padding: 40px;
+  color: #3e2f1c; /* dark brown text */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+select[name='role'] {
+  width: 100px;
+  padding: 0.5rem;
+  border-radius: 15px;
+  border: 1px solid #7b4b2a;
+  color: #7b4b2a; /* warm medium brown */
+}
+
+.register_container {
+  background: #fffdf8;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.register_left, .register_right {
+  flex: 1;
+  padding: 40px;
+}
+
+.register_right {
+  background-color: #fcecc8; /* soft butter yellow block */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register_right img {
+  width: 100%;
+  max-width: 300px;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.8rem;
+  color: #5c3a1a; /* rich brown */
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border: 1.5px solid #b88b5e;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  background-color: #fffaf3;
+}
+
+input::placeholder {
+  font-style: italic;
+}
+
+input:focus {
+  border-color: #7b4b2a;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #7b4b2a;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+  margin-bottom: 12px;
+}
+
+button:hover {
+  background-color: #fcecc8;
+  color: #7b4b2a;
+  border: 1px solid #7b4b2a;
+  cursor: pointer;
+}
+
+.register_footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.register_footer a {
+  color: #7b4b2a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register_footer a:hover {
+  text-decoration: underline;
+}
+
+.passwords {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 12px;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+}
+
+p a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  font-style: italic;
+  color: #7b4b2a;
+  text-align: center;
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+p a:hover {
+  background: #fcecc8;
+  border-radius: 30px;
+  padding: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .register_container {
+    flex-direction: column;
+  }
+
+  .register_right {
+    display: none;
+  }
+}

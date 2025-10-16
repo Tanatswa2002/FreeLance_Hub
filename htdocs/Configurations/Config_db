@@ -1,0 +1,15 @@
+<?php
+$host = "sql313.infinityfree.com";
+$username = "if0_39245338";
+$password = "zO6sNglzff4v";  
+$database = "if0_39245338_graduates_db";
+$port = "3306";
+
+
+$conn = new mysqli($host, $username, $password, $database, $port);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>

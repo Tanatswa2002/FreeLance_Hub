@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Redirect</title>
+</head>
+<body>
+    
+    <form action="https://www.payfast.co.za/eng/process" method="post">
+  <input type="hidden" name="merchant_id" value=" 30588339">
+  <input type="hidden" name="merchant_key" value=" 1jbdiqbrkdczw">
+  <input type="hidden" name="return_url" value="https://freelancehub.ct.ws/payment_notify.php">
+  <input type="hidden" name="cancel_url" value="https://freelancehub.ct.ws/payment_cancelled.php">
+  <input type="hidden" name="notify_url" value="https://freelancehub.ct.ws/payment_notify.php">
+  <input type="hidden" name="amount" value="500.00">
+  <input type="hidden" name="item_name" value="Crochet Bag">
+  <input type="hidden" name="custom_str1" value="ORDER_ID_HERE">
+  <button type="submit">Pay Now with PayFast</button>
+</form>
+
+</body>
+</html>

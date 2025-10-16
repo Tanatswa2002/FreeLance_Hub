@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Products</title>
+</head>
+<body>
+    <h2>Available Products:</h2>
+    <div class="product_list"></div>
+
+    <script>
+        fetch('../PHP/Get_Products.php')
+            .then(response => response.json())
+            .then(data => {
+                const productList = document.querySelector('.product_list');
+                if (data.products && data.products.length > 0) {
+                    data.products.forEach(product => {
+                        const productItem = document.createElement('div');
+                        productItem.innerHTML = `
+                            <h3>${product.name}</h3>
+                            <p>Price: $${product.price}</p>
+                            <p>Description: ${product.description}</p>
+                            <button onclick="addToCart(${product.item_id})">Add to Cart</button>
+                        `;
+                        productList.appendChild(productItem);
+                    });
+                } else {
+                    productList.innerHTML = `<p>${data.message || 'No products available.'}</p>`;
+                }
+            })
+            .catch(error => console.error('Error fetching products:', error));
+
+        function addToCart(productId) {
+            fetch(`../PHP/Add_to_Cart.php?product_id=${productId}`, { method: 'POST' })
+                .then(response => response.json())
+                .then(data => alert(data.message))
+                .catch(error => console.error('Error adding to cart:', error));
+        }
+    </script>
+</body>
+</html>
